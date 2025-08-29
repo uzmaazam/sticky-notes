@@ -1,69 +1,27 @@
-# React + TypeScript + Vite
+# Sticky Notes Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a single-page web application for sticky notes, built with React and TypeScript as per the assessment requirements. It implements all four required features and all five optional features, with a focus on clean architecture, performance, code quality, static typing, and usability.
 
-Currently, two official plugins are available:
+## Features
+- **Core Features**:
+  1. Create a new note at a specified position and size.
+  2. Change note size by dragging the bottom-right handle.
+  3. Move a note by dragging its header.
+  4. Remove a note by dragging it over the trash zone (bottom center, red circular button).
+- **Bonus Features**:
+  1. Enter/edit note text via contentEditable.
+  2. Move notes to front on interaction (z-index management).
+  3. Save/restore notes to local storage on page load.
+  4. Support different note colors (yellow, pink, green, blue, or random).
+  5. Asynchronous mock REST API for saving/loading notes (500ms delay, with local storage backup).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## System Requirements
+- **Browsers**: Latest versions of Google Chrome, Mozilla Firefox, Microsoft Edge (tested as of August 2025).
+- **Resolution**: Minimum 1024x768 (desktop only).
+- **Tech Stack**: React, TypeScript, CSS (no external libraries).
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Setup Instructions
+1. **Clone the Repository** (or unzip the provided archive):
+   ```bash
+   git clone <repository-url>
+   cd sticky-notes
